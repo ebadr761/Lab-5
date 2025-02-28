@@ -13,33 +13,23 @@
         <button id="purpleButton">Purple</button>
     </body>
     <script type="text/javascript">
-    document.getElementById("textInput").addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            var textInput = document.getElementById("textInput").value;
-            document.getElementById("textLabel").innerHTML = textInput; //update the label
-            document.getElementById("textInput").value = ""; //clear the textbox
+        document.getElementById("textInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                var textInput = document.getElementById("textInput").value;
+                document.getElementById("textLabel").innerHTML = textInput; //update the label
+            }
+        });
+
+        // Function to change label color dynamically
+        function changeColor(color) {
+            document.getElementById("textLabel").style.color = color;
         }
-    });
-
-    document.getElementById("redButton").addEventListener("click", function() {
-        document.getElementById("textLabel").style.color = "red";
-    });
-
-    document.getElementById("blueButton").addEventListener("click", function() {
-        document.getElementById("textLabel").style.color = "blue";
-    });
-
-    document.getElementById("greenButton").addEventListener("click", function() {
-        document.getElementById("textLabel").style.color = "green";
-    });
-
-    document.getElementById("orangeButton").addEventListener("click", function() {
-        document.getElementById("textLabel").style.color = "orange";
-    });
-
-    document.getElementById("purpleButton").addEventListener("click", function() {
-        document.getElementById("textLabel").style.color = "purple";
-    });
-
+    
+        // Event listeners for color buttons
+        document.getElementById("redButton").addEventListener("click", () => changeColor("red"));
+        document.getElementById("blueButton").addEventListener("click", () => changeColor("blue"));
+        document.getElementById("greenButton").addEventListener("click", () => changeColor("green"));
+        document.getElementById("orangeButton").addEventListener("click", () => changeColor("orange"));
+        document.getElementById("purpleButton").addEventListener("click", () => changeColor("purple"));
     </script>
 </html>
